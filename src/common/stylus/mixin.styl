@@ -1,0 +1,53 @@
+border-1px($color)
+  position : relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    border-top 1px solid $color
+    width: 100%
+    content: ''
+
+border-none()
+  &:after
+    display: none
+
+bg-image($url)
+  background-image url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio)
+    background-image url($url + "@3x.png")
+
+// 水平垂直居中
+center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+// 水平居中
+h-center() {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+ }
+// 垂直居中
+v-center() {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+// 单行溢出省略
+ellipsis(){
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+//  标题字体颜色
+debangBlue() {
+  color #373c65
+}
+// 普通字体颜色
+fontColor() {
+  color #666666
+}
